@@ -5,14 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="./src/css/main.css">
-    <link rel="stylesheet" type="text/css" href="./src/css/header.css">
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase-database.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="./src/css/main.css">
+    <link rel="stylesheet" type="text/css" href="./src/css/header.css">
+    
 </head>
 <body>
+    <div id="header-wrapper">
+        <header>
+            <img class="mtg-logo" src="./assets/mtg-logo.png" alt="five symbols that represent law, water, death, fire, and earth">
+            <h1>CardCoven</h1>
+            <div class="user-profile">
+                <img class="profile-pic" src="./assets/mtg-icon-2.png">
+                <span>User Name</span>
+                <button id="sign-out-button">Sign Out</button>
+            </div>
+        </header>
+    </div>
+    <main></main>
     <script src="src/index/index.js"></script>
 </body>
 </html>

@@ -14,11 +14,21 @@
 
 <!-- 3. setup authorization on firebase website -->
 
-4. create firebase.js
+<!-- 4. create firebase.js
     add firebase scripts and links to html files
-    add firebase info to firebase.js
+    add firebase info to firebase.js -->
 
 5. TDD Header Section
+    ddd header
+        get mtg png
+        add title
+        add login
+        add profile pic
+        add span for name
+        style in header.css
+        
+    tdd make header html
+    make div wrapper for header
     make loadHeader function
 
 6. Make sure user can log in
