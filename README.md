@@ -1,18 +1,18 @@
-1. setup index
+<!-- 1. setup index
     create index.html
     link main.css
     link index.js
     create header.css
     link header.css
-        -ADD CHANGES TO tests/index.js, ESLINTRC, TRAVIS.YML!!!
+        -ADD CHANGES TO tests/index.js, ESLINTRC, TRAVIS.YML!!! -->
 
-2. create auth
+<!-- 2. create auth
     create auth.html
     create auth.js
     link auth.js
-    link header.css
+    link header.css -->
 
-3. setup authorization on firebase website
+<!-- 3. setup authorization on firebase website -->
 
 4. create firebase.js
     add firebase scripts and links to html files
