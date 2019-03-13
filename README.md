@@ -18,6 +18,16 @@
     add firebase scripts and links to html files
     add firebase info to firebase.js -->
 
+4.5 create ui on auth.js
+    initialize constructor 
+    ui.start()
+        sign in options
+            PROVIDER ID
+        sign in success url
+        credential helper none
+        callbacks
+        
+
 5. TDD Header Section
     ddd header
         get mtg png
@@ -26,12 +36,13 @@
         add profile pic
         add span for name
         style in header.css
-        
+
     tdd make header html
     make div wrapper for header
     make loadHeader function
 
 6. Make sure user can log in
+    add load header to pages
 
 7. DDD index.html
     create section for gallery
