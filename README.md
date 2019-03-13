@@ -1,21 +1,38 @@
-API with User Data
-===
+1. setup index
+    create index.html
+    link main.css
+    link index.js
+    create header.css
+    link header.css
+        -ADD CHANGES TO tests/index.js, ESLINTRC, TRAVIS.YML!!!
 
-Build a searchable, pageable explorer for an API of your choice, that authenticates a user, allows user to select favorites, stores favorite data, and displays user favorites.
+2. create auth
+    create auth.html
+    create auth.js
+    link auth.js
+    link header.css
 
-## Process Requirements
+3. setup authorization on firebase website
 
-1. Commit regularly (at least every 15-20 minutes). Demonstrate your thinking through regular incremental commits. Solo builds without an incremental commit history will not pass.
-2. TDD every function that does not directly manipulate the DOM; template functions, query write/read, make search api url, data transformation. If these functions are not driven by tests (demonstrated by commit history) the build will not pass.
+4. create firebase.js
+    add firebase scripts and links to html files
+    add firebase info to firebase.js
 
-## API
+5. TDD Header Section
+    make loadHeader function
 
-Pick an API that:
+6. Make sure user can log in
 
-1. Has CORS enabled
-2. Accepts a search/query term
-3. Supports paging
+7. DDD index.html
+    create section for gallery
+    create search form section
+    create header section
+    create card entry layout
+        figure out cards per page
 
-You will likely need to sign up for an API key.
+8. TDD Card HTML Template
 
+9. Write loadGallery function
+    write clearRows function
+    
 
