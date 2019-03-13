@@ -18,7 +18,7 @@
     add firebase scripts and links to html files
     add firebase info to firebase.js -->
 
-4.5 create ui on auth.js
+<!-- 4.5 create ui on auth.js
     initialize constructor 
     ui.start()
         sign in options
@@ -26,7 +26,7 @@
         sign in success url
         credential helper none
         callbacks
-        
+         -->
 
 5. TDD Header Section
     ddd header
