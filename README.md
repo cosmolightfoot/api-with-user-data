@@ -28,7 +28,8 @@
         callbacks
          -->
 
-5. TDD Header Section
+
+<!-- 5. TDD Header Section
     ddd header
         get mtg png
         add title
@@ -39,21 +40,31 @@
 
     tdd make header html
     make div wrapper for header
-    make loadHeader function
-
+    make loadHeader function -->
+<!-- 
 6. Make sure user can log in
-    add load header to pages
+    add load header to pages -->
 
-7. DDD index.html
+7. DDD Filter Section
+    figure out fields of search
+        by name
+        by type
+        by subtype
+        by color
+        by set
+    TDD makeFormHtml function
+    TDD makeOptionHtml
+
+8. DDD index.html
     create section for gallery
     create search form section
     create header section
     create card entry layout
         figure out cards per page
 
-8. TDD Card HTML Template
+9. TDD Card HTML Template
 
-9. Write loadGallery function
+10. Write loadGallery function
     write clearRows function
     
 

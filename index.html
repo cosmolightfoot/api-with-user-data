@@ -20,6 +20,7 @@
             <form id="filter-cards">
                 <h1>Search for Cards</h1>
                 <label>By Name: <input name="card-name" placeholder="Search By Name"></label>
+                <button>Submit!</button>
                 <fieldset id="color-boxes">
                     <legend>Color</legend>
                     <label>White<input type="checkbox" name="white" value="white"></label>
@@ -28,8 +29,14 @@
                     <label>Red<input type="checkbox" name="red" value="black"></label>
                     <label>Black<input type="checkbox" name="black" value="black"></label>
                 </fieldset>
-                <select name="card-type">
-                    <option value="land">Land</option>
+                <select id="filter-type" name="card-type">
+                    <option value="">--Filter By Type--</option>
+                </select>
+                <select id="filter-subtype" name="card-subtype">
+                    <option value="">--Filter By Subtype--</option>
+                </select>
+                <select id="filter-set" name="card-set">
+                    <option value="">--Filter By Set--</option>
                 </select>
             </form>
             <ul id="card-list">
