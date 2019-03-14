@@ -70,3 +70,4 @@ function clearList() {
         cardListNode.lastElementChild.remove();
     }
 }
+

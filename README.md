@@ -64,7 +64,21 @@
 <!-- 
 9. TDD Card HTML Template -->
 
-10. Write loadGallery function
-    write clearRows function
+<!-- 10. Write loadGallery function
+    write clearRows function -->
     
+11. TDD Query Functions
+    write search to query
+    write page to query
+    read from query
+    export to own file
+
+12. Create Search Components JS
+    addEventListener SUBMIT
+    Change Hash on submit
+    
+13. TDD Search URL function
+    if no input fields returns base utl
+    
+14. Write Load Query function on index.html
 
