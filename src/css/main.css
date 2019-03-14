@@ -22,7 +22,7 @@ form {
 #card-list {
     width: 700px;
     margin: 0;
-    height: 1000px;
+    height: 100%;
     border: 3px solid red;
     display: flex;
     flex-direction: column;
@@ -38,14 +38,21 @@ form {
     align-items: center;
     border: 3px solid red;
     width: 650px;
+    margin: 2px;
     
 }
 
 .card-title {
     font-size: 16px;
+    margin-bottom: 5px;
 }
 .card-text, .card-flavor {
     font-size: 14px;
+    margin: 3px;
+}
+
+.card-flavor {
+    font-style: italic;
 }
 
 .card-pic {
@@ -53,6 +60,12 @@ form {
     margin-right: 10px;
 }
 
+th, td {
+    font-size: 12px;
+}
+
 .card-item div {
     width: 500px;
+    display: flex;
+    flex-direction: column;
 }
