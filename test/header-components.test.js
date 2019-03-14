@@ -39,3 +39,4 @@ test('dynamically makes header html', function(assert) {
     
     assert.htmlEqual(result, expected);
 });
+

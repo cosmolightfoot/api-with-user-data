@@ -1,3 +1,5 @@
+import { auth } from '../firebase/firebase.js';
+ 
 export function makeHeaderHtml() {
     const html = `
         <header>
@@ -21,4 +23,28 @@ export function makeUserHtml(user) {
     const template = document.createElement('template');
     template.innerHTML = html;
     return template.content;
+}
+
+export default function loadHeader(options) {
+    const dom = makeHeaderHtml();
+    const headerWrapperNode = document.getElementById('header-wrapper');
+    headerWrapperNode.appendChild(dom);
+
+    if(options && options.skipAuth) {
+        return;
+    }
+    
+    auth.onAuthStateChanged(user => {
+        if(user) {
+            const userDom = makeUserHtml(user);
+            const signOutButton = userDom.querySelector('button');
+            signOutButton.addEventListener('click', () => {
+                auth.signOut();
+            });
+        }
+        else {
+            window.location = './auth.html';
+        }
+    });
+    
 }
