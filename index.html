@@ -14,17 +14,34 @@
 </head>
 <body>
     <div id="header-wrapper">
-        <!-- <header>
-            <img class="mtg-logo" src="./assets/mtg-logo.png" alt="five symbols that represent law, water, death, fire, and earth">
-            <h1>CardCoven</h1>
-            <div class="user-profile">
-                <img class="profile-pic" src="./assets/mtg-icon-2.png">
-                <span>User Name</span>
-                <button id="sign-out-button">Sign Out</button>
-            </div>
-        </header> -->
     </div>
-    <main></main>
+    <main>
+        <section id="card-gallery">
+            <form id="filter-cards">
+                <h1>Search for Cards</h1>
+                <label>By Name: <input name="card-name" placeholder="Search By Name"></label>
+                <fieldset id="color-boxes">
+                    <legend>Color</legend>
+                    <label>White<input type="checkbox" name="white" value="white"></label>
+                    <label>Blue<input type="checkbox" name="blue" value="blue"></label>
+                    <label>Green<input type="checkbox" name="green" value="green"></label>
+                    <label>Red<input type="checkbox" name="red" value="black"></label>
+                    <label>Black<input type="checkbox" name="black" value="black"></label>
+                </fieldset>
+                <select name="card-type">
+                    <option value="land">Land</option>
+                </select>
+            </form>
+            <ul id="card-list">
+                <li>text</li>
+                <li>text</li>
+                <li>text</li>
+                <li>text</li>
+                <li>text</li>
+                <li>text</li>
+            </ul>
+    </section>
+    </main>
     <script type="module" src="src/index/index.js"></script>
 </body>
 </html> 

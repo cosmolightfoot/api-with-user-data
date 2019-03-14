@@ -15,8 +15,9 @@ header h1 {
 }
 
 .user-profile {
-    border: 1px solid black;
     height: 100%;
+    padding: 3px;
+    background-color: cadetblue;
     display: flex;
     align-items: center;
     align-self: flex-end;

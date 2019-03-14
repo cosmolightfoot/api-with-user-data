@@ -28,6 +28,7 @@ export function makeUserHtml(user) {
 export default function loadHeader(options) {
     const dom = makeHeaderHtml();
     const headerWrapperNode = document.getElementById('header-wrapper');
+    const header = dom.querySelector('header');
     headerWrapperNode.appendChild(dom);
 
     if(options && options.skipAuth) {
@@ -41,6 +42,8 @@ export default function loadHeader(options) {
             signOutButton.addEventListener('click', () => {
                 auth.signOut();
             });
+            header.appendChild(userDom);
+
         }
         else {
             window.location = './auth.html';
