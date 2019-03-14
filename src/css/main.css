@@ -13,9 +13,46 @@ form {
     border: 3px solid blue;
 }
 
-ul {
-    width: 65%;
+#display-cards {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#card-list {
+    width: 700px;
     margin: 0;
     height: 1000px;
     border: 3px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+}
+
+.card-item {
+    margin: 0px;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid red;
+    width: 650px;
+    
+}
+
+.card-title {
+    font-size: 16px;
+}
+.card-text, .card-flavor {
+    font-size: 14px;
+}
+
+.card-pic {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.card-item div {
+    width: 500px;
 }

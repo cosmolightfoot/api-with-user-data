@@ -45,7 +45,7 @@
 6. Make sure user can log in
     add load header to pages -->
 
-7. DDD Filter Section
+<!-- 7. DDD Filter Section
     figure out fields of search
         by name
         by type
@@ -53,7 +53,7 @@
         by color
         by set
     TDD makeFormHtml function
-    TDD makeOptionHtml
+    TDD makeOptionHtml -->
 
 8. DDD index.html
     create section for gallery
