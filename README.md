@@ -54,15 +54,15 @@
         by set
     TDD makeFormHtml function
     TDD makeOptionHtml -->
-
+<!-- 
 8. DDD index.html
     create section for gallery
     create search form section
     create header section
     create card entry layout
-        figure out cards per page
-
-9. TDD Card HTML Template
+        figure out cards per page -->
+<!-- 
+9. TDD Card HTML Template -->
 
 10. Write loadGallery function
     write clearRows function
