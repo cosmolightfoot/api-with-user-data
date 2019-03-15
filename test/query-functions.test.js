@@ -2,48 +2,7 @@ const test = QUnit.test;
 
 QUnit.module('query functions');
 
-function writeSearchToQuery(existingQuery, searchOptions) {
-    const URL = new URLSearchParams(existingQuery);
-    URL.delete('page');
-    if(URL.get('name') && !searchOptions.name) {
-        URL.delete('name');
-    }
-    else if(searchOptions.name) {
-        URL.set('name', searchOptions.name);
-    }
-
-    if(URL.get('colors') && !searchOptions.colors) {
-        URL.delete('colors');
-    }
-    else if(searchOptions.colors) {
-        URL.set('colors', searchOptions.colors);
-    }
-    
-    if(URL.get('types') && !searchOptions.types) {
-        URL.delete('types');
-    }
-    else if(searchOptions.types) {
-        URL.set('types', searchOptions.types);
-    }
-
-    if(URL.get('subtypes') && !searchOptions.subtypes) {
-        URL.delete('subtypes');
-    }
-    else if(searchOptions.subtypes) {
-        URL.set('subtypes', searchOptions.subtypes);
-    }
-
-    if(URL.get('sets') && !searchOptions.sets) {
-        URL.delete('sets');
-    }
-    else if(searchOptions.sets) {
-        URL.set('sets', searchOptions.sets);
-    }
-
-
-    URL.set('page', 1);
-    return URL.toString();
-}
+import { writeSearchToQuery, writePageToQuery, readFromQuery } from '../src/functions/query-functions.js';
 
 test('writesname to query', assert => {
     //arrange
@@ -118,7 +77,7 @@ test('adds subtypes', assert => {
     assert.equal(result, expected);
 });
 
-test('adds subtypes', assert => {
+test('adds sets', assert => {
     //arrange
     const searchOptions = {
         name:'Jace',
@@ -133,4 +92,88 @@ test('adds subtypes', assert => {
     const expected = 'name=Jace&types=Creature&subtypes=Vampire&sets=Tenth+Edition&page=1';
     //assert
     assert.equal(result, expected);
+});
+
+test('clears query', assert => {
+    //arrange
+    const searchOptions = {
+        name:null,
+        colors: '',
+        types: null,
+        subtypes: '',
+        sets: ''
+    };
+    const existingQuery = 'name=Jill&colors=blue,black&types=Creature&page=1';
+    //act
+    const result = writeSearchToQuery(existingQuery, searchOptions);
+    const expected = 'page=1';
+    //assert
+    assert.equal(result, expected);
+});
+
+test('null array', assert => {
+    //arrange
+    const searchOptions = {};
+    const existingQuery = 'name=Jill&colors=blue,black&types=Creature&page=1';
+    //act
+    const result = writeSearchToQuery(existingQuery, searchOptions);
+    const expected = 'page=1';
+    //assert
+    assert.equal(result, expected);
+});
+
+
+test('writes page to query', assert => {
+    //arrange
+    const searchOptions = {
+        name: 'Jace',
+        colors: 'Blue',
+        types: null,
+        subtypes: '',
+        sets: '',
+        page: 2
+    };
+    const existingQuery = 'name=Jace&colors=Blue&page=1';
+    //act
+    const result = writePageToQuery(existingQuery, searchOptions);
+    const expected = 'name=Jace&colors=Blue&page=2';
+    //assert
+    assert.equal(result, expected);
+});
+
+
+
+test('creates searchOptions Object from query', assert => {
+    //arrange
+    const existingQuery = 'name=Jace&colors=Blue,Black&types=Planeswalker&subtypes=banana&sets=hammock&page=1';
+    //act
+    const result = readFromQuery(existingQuery);
+    const expected = {
+        name: 'Jace',
+        colors: 'Blue,Black',
+        types:  'Planeswalker',
+        subtypes: 'banana',
+        sets: 'hammock',
+        page: 1
+    };
+    //assert
+    assert.deepEqual(result, expected);
+});
+
+
+test('creates searchOptions Object from query', assert => {
+    //arrange
+    const existingQuery = 'name=Jace&colors=Blue,Black&subtypes=banana&sets=hammock&page=1';
+    //act
+    const result = readFromQuery(existingQuery);
+    const expected = {
+        name: 'Jace',
+        colors: 'Blue,Black',
+        types: null,
+        subtypes: 'banana',
+        sets: 'hammock',
+        page: 1
+    };
+    //assert
+    assert.deepEqual(result, expected);
 });

@@ -67,11 +67,11 @@
 <!-- 10. Write loadGallery function
     write clearRows function -->
     
-11. TDD Query Functions
+<!-- 11. TDD Query Functions
     write search to query
     write page to query
     read from query
-    export to own file
+    export to own file -->
 
 12. Create Search Components JS
     addEventListener SUBMIT
@@ -82,3 +82,28 @@
     
 14. Write Load Query function on index.html
 
+   if(formData.get('white')) {
+        colorBoxes.push('white');
+    }
+    if(formData.get('blue')) {
+        colorBoxes.push('blue');
+    }
+    if(formData.get('green')) {
+        colorBoxes.push('green');
+    }
+    if(formData.get('red')) {
+        colorBoxes.push('red');
+    }
+    if(formData.get('black')) {
+        colorBoxes.push('black');
+    }
+    let colorString = '';
+
+    if(colorBoxes.length === 1) {
+        colorString += colorBoxes[1];
+    }
+    else if (colorBoxes.length > 1) {
+        colorBoxes.forEach(color => {
+            colorString += color 
+        });
+    }
