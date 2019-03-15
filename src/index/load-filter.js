@@ -9,8 +9,16 @@ filterForm.addEventListener('submit', event => {
     const colors = getColors(formData);
     const searchOptions = {
         name: formData.get('card-name'),
-        colors: colors
+        colors: colors,
+        types: formData.get('card-type'),
+        subtypes: formData.get('card-subtype'),
+        sets: formData.get('card-set')
     };
+    const existingQuery = window.location.hash;
+    console.log('existingQuery', existingQuery);
+    const newQuery = writeSearchToQuery(existingQuery, searchOptions);
+    console.log('newQuery', newQuery);
+    window.location.hash = newQuery;
 });
 
 function getColors(formData) {
