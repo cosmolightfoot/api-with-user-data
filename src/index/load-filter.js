@@ -14,10 +14,8 @@ filterForm.addEventListener('submit', event => {
         subtypes: formData.get('card-subtype'),
         sets: formData.get('card-set')
     };
-    const existingQuery = window.location.hash;
-    console.log('existingQuery', existingQuery);
+    const existingQuery = window.location.hash.slice(1);
     const newQuery = writeSearchToQuery(existingQuery, searchOptions);
-    console.log('newQuery', newQuery);
     window.location.hash = newQuery;
 });
 
