@@ -29,11 +29,11 @@ export function writeSearchToQuery(existingQuery, searchOptions) {
         URL.set('subtypes', searchOptions.subtypes);
     }
 
-    if(URL.get('sets') && !searchOptions.sets) {
-        URL.delete('sets');
+    if(URL.get('setName') && !searchOptions.setName) {
+        URL.delete('setName');
     }
-    else if(searchOptions.sets) {
-        URL.set('sets', searchOptions.sets);
+    else if(searchOptions.setName) {
+        URL.set('setName', searchOptions.setName);
     }
 
 
@@ -55,7 +55,7 @@ export function readFromQuery(existingQuery) {
         colors: URL.get('colors'),
         types: URL.get('types'),
         subtypes: URL.get('subtypes'),
-        sets: URL.get('sets'),
+        setName: URL.get('setName'),
         page: 1
     };
     return searchOptions;

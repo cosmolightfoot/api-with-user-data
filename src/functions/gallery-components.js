@@ -66,7 +66,9 @@ export function loadGallery(cardArray) {
 }
 
 function clearList() {
-    while(cardListNode.length) {
+    console.log(cardListNode);
+    while(cardListNode.children.length) {
+        console.log('it worked!');
         cardListNode.lastElementChild.remove();
     }
 }

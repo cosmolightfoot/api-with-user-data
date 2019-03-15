@@ -1,4 +1,4 @@
-export const types = ['Artifact', 'Conspiracy', 'Creature', 'Enchantment', 'Hero', 'instant', 'Instant', 'Land', 'Phenomenon', 'Plane', 'Planeswalker', 'Scheme', 'Sorcery', 'Summon', 'Tribal', 'Vanguard'];
+export const types = ['Artifact', 'Conspiracy', 'Creature', 'Enchantment', 'Hero', 'Instant', 'Land', 'Phenomenon', 'Plane', 'Planeswalker', 'Scheme', 'Sorcery', 'Summon', 'Tribal', 'Vanguard'];
 
 export const subtypes = [
     'Advisor',

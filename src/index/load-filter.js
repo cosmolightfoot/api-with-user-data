@@ -5,6 +5,12 @@ const filterForm = document.getElementById('filter-cards');
 
 filterForm.addEventListener('submit', event => {
     event.preventDefault();
+    loadFilter();
+});
+
+filterForm.addEventListener('change', loadFilter);
+
+function loadFilter() {
     const formData = new FormData(filterForm);
     const colors = getColors(formData);
     const searchOptions = {
@@ -12,12 +18,12 @@ filterForm.addEventListener('submit', event => {
         colors: colors,
         types: formData.get('card-type'),
         subtypes: formData.get('card-subtype'),
-        sets: formData.get('card-set')
+        setName: formData.get('card-set')
     };
     const existingQuery = window.location.hash.slice(1);
     const newQuery = writeSearchToQuery(existingQuery, searchOptions);
     window.location.hash = newQuery;
-});
+}
 
 function getColors(formData) {
     const getColors = [
