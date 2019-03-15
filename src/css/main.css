@@ -55,6 +55,11 @@ form {
     font-style: italic;
 }
 
+.favorite-star {
+    align-self: flex-start;
+    font-weight: bold;
+}
+
 .card-pic {
     width: 100px;
     margin-right: 10px;
