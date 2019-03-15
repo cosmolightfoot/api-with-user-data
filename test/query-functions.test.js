@@ -84,12 +84,12 @@ test('adds sets', assert => {
         colors: '',
         types: 'Creature',
         subtypes: 'Vampire',
-        sets: 'Tenth Edition'
+        setName: 'Tenth Edition'
     };
     const existingQuery = 'name=Jill&colors=blue,black&types=Creature&page=1';
     //act
     const result = writeSearchToQuery(existingQuery, searchOptions);
-    const expected = 'name=Jace&types=Creature&subtypes=Vampire&sets=Tenth+Edition&page=1';
+    const expected = 'name=Jace&types=Creature&subtypes=Vampire&setName=Tenth+Edition&page=1';
     //assert
     assert.equal(result, expected);
 });
@@ -145,7 +145,7 @@ test('writes page to query', assert => {
 
 test('creates searchOptions Object from query', assert => {
     //arrange
-    const existingQuery = 'name=Jace&colors=Blue,Black&types=Planeswalker&subtypes=banana&sets=hammock&page=1';
+    const existingQuery = 'name=Jace&colors=Blue,Black&types=Planeswalker&subtypes=banana&setName=hammock&page=1';
     //act
     const result = readFromQuery(existingQuery);
     const expected = {
@@ -153,7 +153,7 @@ test('creates searchOptions Object from query', assert => {
         colors: 'Blue,Black',
         types:  'Planeswalker',
         subtypes: 'banana',
-        sets: 'hammock',
+        setName: 'hammock',
         page: 1
     };
     //assert
@@ -163,7 +163,7 @@ test('creates searchOptions Object from query', assert => {
 
 test('creates searchOptions Object from query', assert => {
     //arrange
-    const existingQuery = 'name=Jace&colors=Blue,Black&subtypes=banana&sets=hammock&page=1';
+    const existingQuery = 'name=Jace&colors=Blue,Black&subtypes=banana&setName=hammock&page=1';
     //act
     const result = readFromQuery(existingQuery);
     const expected = {
@@ -171,7 +171,7 @@ test('creates searchOptions Object from query', assert => {
         colors: 'Blue,Black',
         types: null,
         subtypes: 'banana',
-        sets: 'hammock',
+        setName: 'hammock',
         page: 1
     };
     //assert

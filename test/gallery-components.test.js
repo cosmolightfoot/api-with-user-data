@@ -66,7 +66,8 @@ test('Makes list item html dynamically', assert => {
                         </tr>
                     </tbody>
                 </table>
-            </div>
+                </div>
+            <span class="favorite-star">☆</span>
         </li>
         `;
 
