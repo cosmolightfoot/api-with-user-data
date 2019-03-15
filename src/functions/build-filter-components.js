@@ -10,7 +10,7 @@ export function makeOptionHtml(type) {
     return template.content;
 }
 
-export default function loadSearchForm(type, subtype, setName) {
+export default function loadSearchForm() {
     const filterByTypeNode = document.getElementById('filter-type');
     const filterBySubtypeNode = document.getElementById('filter-subtype');
     const filterBySetNode = document.getElementById('filter-set');

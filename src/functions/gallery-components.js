@@ -65,28 +65,56 @@ export function loadGallery(cardArray) {
     cardArray.forEach(card => {
         const dom = makeCardHtml(card);
         const favoriteStar = dom.querySelector('.favorite-star');
-
+        const cardNode = dom.querySelector('.card-item');
         const userId = auth.currentUser.uid;
         const userFavoritesRef = favoritesByUserRef.child(userId);
         const userFavoriteCardRef = userFavoritesRef.child(card.id);
-        favoriteStar.addEventListener('click', () => {
-            userFavoriteCardRef.set({
-                id: card.id,
-                name: card.name || 'undefined',
-                cmc: card.cmc || 'undefined',
-                colors: card.colors || 'undefined',
-                type: card.type || 'undefined',
-                setName: card.setName || 'undefined',
-                subtypes: card.subtypes || 'undefined',
-                rarity: card.rarity || 'undefined',
-                text: card.text || 'undefined',
-                flavor: card.flavor || 'undefined',
-                manaCost: card.manaCost || 'undefined',
-                imageUrl: card.imageURL || 'undefined',
-                power: card.power || 'undefined',
-                toughness: card.toughness || 'undefined'
+        userFavoriteCardRef.once('value')
+            .then(snapshot => {
+                const value = snapshot.val();
+                let isFavorite = false;
+                if(value) {
+                    addFavorite();
+                }
+                else {
+                    removeFavorite();
+                }
+                
+                function addFavorite() {
+                    isFavorite = true;
+                    favoriteStar.textContent = '★';
+                    favoriteStar.classList.add('favorite');
+                    cardNode.classList.add('favorite-card');
+                }
+
+                function removeFavorite() {
+                    isFavorite = false;
+                    favoriteStar.textContent = '☆';
+                    favoriteStar.classList.remove('favorite');
+                    cardNode.classList.remove('favorite-card');
+                }
+                favoriteStar.addEventListener('click', () => {
+                    userFavoriteCardRef.set({
+                        id: card.id,
+                        name: card.name || 'undefined',
+                        cmc: card.cmc || 'undefined',
+                        colors: card.colors || 'undefined',
+                        type: card.type || 'undefined',
+                        setName: card.setName || 'undefined',
+                        subtypes: card.subtypes || 'undefined',
+                        rarity: card.rarity || 'undefined',
+                        text: card.text || 'undefined',
+                        flavor: card.flavor || 'undefined',
+                        manaCost: card.manaCost || 'undefined',
+                        imageUrl: card.imageURL || 'undefined',
+                        power: card.power || 'undefined',
+                        toughness: card.toughness || 'undefined'
+                    });
+                    addFavorite();
+                });
             });
-        });
+        
+        
         cardListNode.appendChild(dom);
     });
 }
