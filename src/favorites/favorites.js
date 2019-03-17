@@ -6,7 +6,7 @@ loadHeader();
 
 auth.onAuthStateChanged(user => {
     const userFavoritesRef = favoritesByUserRef.child(user.uid);
-    userFavoritesRef.on('value', snapshot => {
+    userFavoritesRef.once('value').then(snapshot => {
         const value = snapshot.val();
         const favoriteArray = objectToArray(value);
         loadGallery(favoriteArray);

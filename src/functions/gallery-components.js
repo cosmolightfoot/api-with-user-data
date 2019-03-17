@@ -1,11 +1,12 @@
 import { auth, favoritesByUserRef } from '../firebase/firebase.js';
 
-function listMultipleTypes(typeArray) {
+function listMultipleTypes(typeArray) {    
     let typeString = typeArray[0];
     for(let i = 1; i < typeArray.length; i++) {
         typeString += ', ' + typeArray[i];
     }
-    return typeString;
+    console.log(typeString);
+    return typeString ? typeString : 'N/A';
 }
 
 
@@ -14,13 +15,14 @@ export function makeCardHtml(card) {
     const concactSubtypes = listMultipleTypes(card.subtypes);
     const subtypes = card.subtypes ? concactSubtypes : 'None';
     const concactColors = listMultipleTypes(card.colors);
+    const imageLocation = card.imageUrl || '../../assets/card-back.jpeg';
     const colors = card.colors ? concactColors : 'None';
     const powerString = card.power + '/' + card.toughness;
     const powerTough = (card.power && card.toughness) ? powerString : 'N/A';
     
     const html = /*html*/`
     <li class="card-item">
-        <img class="card-pic" src="${card.imageUrl}">
+        <img class="card-pic" src="${imageLocation}">
         <div>
             <h1 class="card-title">${card.name}</h1>
             <p class="card-text">${card.text}</p>
@@ -94,6 +96,7 @@ export function loadGallery(cardArray) {
                     cardNode.classList.remove('favorite-card');
                 }
                 favoriteStar.addEventListener('click', () => {
+                    1
                     userFavoriteCardRef.set({
                         id: card.id,
                         name: card.name || 'undefined',
@@ -101,12 +104,12 @@ export function loadGallery(cardArray) {
                         colors: card.colors || 'undefined',
                         type: card.type || 'undefined',
                         setName: card.setName || 'undefined',
-                        subtypes: card.subtypes || 'undefined',
+                        subtypes: card.subtypes[0] || 'undefined',
                         rarity: card.rarity || 'undefined',
                         text: card.text || 'undefined',
                         flavor: card.flavor || 'undefined',
                         manaCost: card.manaCost || 'undefined',
-                        imageUrl: card.imageURL || 'undefined',
+                        imageUrl: card.imageUrl || 'undefined',
                         power: card.power || 'undefined',
                         toughness: card.toughness || 'undefined'
                     });

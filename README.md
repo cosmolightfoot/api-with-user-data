@@ -86,8 +86,12 @@
 15. modify make card html to include some sort of favorite icon
     -should have class 'favorite icon' -->
 
-16. create and export favoritesByUserRef on firebase.js
+<!-- 16. create and export favoritesByUserRef on firebase.js
 
 17. add event listener to loadGallery function to add fav
     -import auth and favbyuserref from firebase
-    -
+    - -->
+
+Image URLs are not reaching favorites list
+Cannot remove favorited item from favorites list
+Set Default Image for Cards
