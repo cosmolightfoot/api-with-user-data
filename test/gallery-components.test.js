@@ -2,10 +2,6 @@ const test = QUnit.test;
 
 QUnit.module('Tests Pertaining to Building the Gallery');
 
-// function capitalizeFirstLetter(word) {
-//     return word.charAt(0).toUpperCase() + word.slice(1);
-// }
-
 import { makeCardHtml } from '../src/functions/gallery-components.js';
 
 test('Makes list item html dynamically', assert => {
