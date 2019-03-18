@@ -1,7 +1,10 @@
 import { addRemoveFavorite } from './add-remove-favorite.js';
 function listMultipleTypes(typeArray) {    
     
-    if(typeArray === 'N/A' || 'Colorless') {
+    if(typeArray === 'N/A') {
+        return typeArray;
+    }
+    else if(typeArray === 'Colorless') {
         return typeArray;
     }
     else {
