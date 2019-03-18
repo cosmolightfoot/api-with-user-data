@@ -10,7 +10,7 @@ function listMultipleTypes(typeArray) {
             typeString += ', ' + typeArray[i];
         }
         return typeString ? typeString : 'N/A';
-}
+    }
 }
 
 
