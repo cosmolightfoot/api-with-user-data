@@ -43,14 +43,14 @@ function getColors(formData) {
         }
     });
 
-    if(colorCount === 1 ) {
+    if(colorCount === 1) {
         colorString += trueColors[0];
     }
     else if(colorCount > 1) {
         for(let i = 0; i < trueColors.length - 1; i++) {
             colorString += trueColors[i] + ',';
         }
-        colorString += trueColors[trueColors.length -1];
+        colorString += trueColors[trueColors.length - 1];
     }
     return colorString;
 }

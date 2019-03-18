@@ -9,7 +9,6 @@ auth.onAuthStateChanged(user => {
     userFavoritesRef.once('value').then(snapshot => {
         const value = snapshot.val();
         const favoriteArray = objectToArray(value);
-        console.log('favorites array', favoriteArray);
         loadGallery(favoriteArray);
         
     });

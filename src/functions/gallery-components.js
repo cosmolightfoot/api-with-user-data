@@ -6,7 +6,7 @@ function listMultipleTypes(typeArray) {
     }
     let typeString = typeArray[0];
     for(let i = 1; i < typeArray.length; i++) {
-        typeString += ',  ' + typeArray[i];
+        typeString += ', ' + typeArray[i];
     }
     return typeString ? typeString : 'N/A';
 }
