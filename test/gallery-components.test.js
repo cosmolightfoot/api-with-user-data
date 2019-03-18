@@ -58,7 +58,7 @@ test('Makes list item html dynamically', assert => {
                             <th>Subtypes:</th>
                             <td>Sliver</td>
                             <th>Color:</th>
-                            <td>Blue,Red</td>
+                            <td>Blue, Red</td>
                             <th>Converted Cost:</th>
                             <td>4</td>
                             <th>Power/Toughness:</th>
