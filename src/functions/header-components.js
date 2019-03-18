@@ -5,7 +5,10 @@ export function makeHeaderHtml() {
         <header>
             <img class="mtg-logo" src="./assets/mtg-logo.png" alt="five symbols that represent law, water, death, fire, and earth">
             <h1>CardCoven</h1>
-            <a href="./">Home</a>
+            <ul>
+                <li><a href="./">Home</a></li>
+                <li><a href="./favorites.html">Favorites List</a></li>
+            </ul>
         </header>
     `;
     const template = document.createElement('template');

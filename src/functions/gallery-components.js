@@ -6,7 +6,7 @@ function listMultipleTypes(typeArray) {
     }
     let typeString = typeArray[0];
     for(let i = 1; i < typeArray.length; i++) {
-        typeString += ', ' + typeArray[i];
+        typeString += ',  ' + typeArray[i];
     }
     return typeString ? typeString : 'N/A';
 }
@@ -25,7 +25,7 @@ export function makeCardHtml(card) {
     let powerTough;
     if(
         (card.power === 'undefined' && card.toughness === 'undefined') ||
-        (!card.power && !card.toughness)) {
+        (!card.power || !card.toughness)) {
         powerTough = 'N/A';
     }
     else {

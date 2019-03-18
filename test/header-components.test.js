@@ -8,10 +8,14 @@ import { makeHeaderHtml } from '../src/functions/header-components.js';
 test('dynamically makes header html', function(assert) {
     const result = makeHeaderHtml();
     const expected = /*html*/ `
-        <header>
-            <img class="mtg-logo" src="./assets/mtg-logo.png" alt="five symbols that represent law, water, death, fire, and earth">
-            <h1>CardCoven</h1>
-        </header>
+    <header>
+        <img class="mtg-logo" src="./assets/mtg-logo.png" alt="five symbols that represent law, water, death, fire, and earth">
+        <h1>CardCoven</h1>
+        <ul>
+            <li><a href="./">Home</a></li>
+            <li><a href="./favorites.html">Favorites List</a></li>
+        </ul>
+    </header>
     `;
     
     
