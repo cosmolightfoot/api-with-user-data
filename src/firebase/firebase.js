@@ -5,7 +5,7 @@ const config = {
     projectId: 'magic-the-gathering-api-5ea5a'
 };
 
-firebase.initializeApp(config);
+export const app = firebase.initializeApp(config);
 
 export const auth = firebase.auth();
 export const db = firebase.database();

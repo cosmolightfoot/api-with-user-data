@@ -4,11 +4,13 @@ function listMultipleTypes(typeArray) {
     if(typeArray === 'N/A' || 'Colorless') {
         return typeArray;
     }
-    let typeString = typeArray[0];
-    for(let i = 1; i < typeArray.length; i++) {
-        typeString += ', ' + typeArray[i];
-    }
-    return typeString ? typeString : 'N/A';
+    else {
+        let typeString = typeArray[0];
+        for(let i = 1; i < typeArray.length; i++) {
+            typeString += ', ' + typeArray[i];
+        }
+        return typeString ? typeString : 'N/A';
+}
 }
 
 
