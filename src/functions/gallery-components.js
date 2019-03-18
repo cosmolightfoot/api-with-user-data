@@ -96,26 +96,30 @@ export function loadGallery(cardArray) {
                     cardNode.classList.remove('favorite-card');
                 }
                 favoriteStar.addEventListener('click', () => {
-                    console.log('card', card);
-                    console.log('card.types', card.types);
+                    if(!isFavorite){
 
-                    userFavoriteCardRef.set({
-                        id: card.id,
-                        name: card.name || 'undefined',
-                        cmc: card.cmc || 'undefined',
-                        colors: card.colors ? card.colors : 'Colorless',
-                        types: card.types ? card.types : 'N/A',
-                        setName: card.setName || 'undefined',
-                        subtypes: card.subtype ? card.subtype : 'N/A',
-                        rarity: card.rarity || 'undefined',
-                        text: card.text || 'undefined',
-                        flavor: card.flavor || 'undefined',
-                        manaCost: card.manaCost || 'undefined',
-                        imageUrl: card.imageUrl || 'undefined',
-                        power: card.power || 'undefined',
-                        toughness: card.toughness || 'undefined'
-                    });
-                    addFavorite();
+                        userFavoriteCardRef.set({
+                            id: card.id,
+                            name: card.name || 'undefined',
+                            cmc: card.cmc || 'undefined',
+                            colors: card.colors ? card.colors : 'Colorless',
+                            types: card.types ? card.types : 'N/A',
+                            setName: card.setName || 'undefined',
+                            subtypes: card.subtype ? card.subtype : 'N/A',
+                            rarity: card.rarity || 'undefined',
+                            text: card.text || 'undefined',
+                            flavor: card.flavor || 'undefined',
+                            manaCost: card.manaCost || 'undefined',
+                            imageUrl: card.imageUrl || 'undefined',
+                            power: card.power || 'undefined',
+                            toughness: card.toughness || 'undefined'
+                        });
+                        addFavorite();
+                    }
+                    else {
+                        removeFavorite();
+                        userFavoriteCardRef.remove();
+                    }
                 });
             });
         

@@ -92,6 +92,8 @@
     -import auth and favbyuserref from firebase
     - -->
 
-Image URLs are not reaching favorites list
+<!-- Image URLs are not reaching favorites list -->
+
+<!-- Set Default Image for Cards -->
+
 Cannot remove favorited item from favorites list
-Set Default Image for Cards
