@@ -5,7 +5,6 @@ function listMultipleTypes(typeArray) {
     for(let i = 1; i < typeArray.length; i++) {
         typeString += ', ' + typeArray[i];
     }
-    console.log(typeString);
     return typeString ? typeString : 'N/A';
 }
 
@@ -14,9 +13,10 @@ export function makeCardHtml(card) {
     const flavorText = card.flavor ? card.flavor : 'No Flavor Text.';
     const concactSubtypes = listMultipleTypes(card.subtypes);
     const subtypes = card.subtypes ? concactSubtypes : 'None';
+    const types = listMultipleTypes(card.types);
     const concactColors = listMultipleTypes(card.colors);
     const imageLocation = card.imageUrl || '../../assets/card-back.jpeg';
-    const colors = card.colors ? concactColors : 'None';
+    const colors = card.colors ? concactColors : 'Colorless';
     const powerString = card.power + '/' + card.toughness;
     const powerTough = (card.power && card.toughness) ? powerString : 'N/A';
     
@@ -31,7 +31,7 @@ export function makeCardHtml(card) {
                 <tbody>
                     <tr>
                         <th>Types:</th>
-                        <td>${card.types}</td>
+                        <td>${types}</td>
                         <th>Set:</th>
                         <td title="${card.setName}">${card.set}</td>
                         <th>Cost:</th>
@@ -96,15 +96,17 @@ export function loadGallery(cardArray) {
                     cardNode.classList.remove('favorite-card');
                 }
                 favoriteStar.addEventListener('click', () => {
-                    1
+                    console.log('card', card);
+                    console.log('card.types', card.types);
+
                     userFavoriteCardRef.set({
                         id: card.id,
                         name: card.name || 'undefined',
                         cmc: card.cmc || 'undefined',
-                        colors: card.colors || 'undefined',
-                        type: card.type || 'undefined',
+                        colors: card.colors ? card.colors : 'Colorless',
+                        types: card.types ? card.types : 'N/A',
                         setName: card.setName || 'undefined',
-                        subtypes: card.subtypes[0] || 'undefined',
+                        subtypes: card.subtype ? card.subtype : 'N/A',
                         rarity: card.rarity || 'undefined',
                         text: card.text || 'undefined',
                         flavor: card.flavor || 'undefined',
