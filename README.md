@@ -96,4 +96,18 @@
 
 <!-- Set Default Image for Cards -->
 
-Cannot remove favorited item from favorites list
+<!-- Cannot remove favorited item from favorites list -->
+
+<!-- fix tests -->
+
+
+add home button to header
+
+make .on changes 
+
+
+feature ideas: 
+    click on card image and have it expand to left side
+    click on 'rulings' button and have it list rulings on right side
+    add filter for powers
+

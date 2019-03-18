@@ -1,6 +1,9 @@
-import { auth, favoritesByUserRef } from '../firebase/firebase.js';
-
+import { addRemoveFavorite } from './add-remove-favorite.js';
 function listMultipleTypes(typeArray) {    
+    
+    if(typeArray === 'N/A' || 'Colorless') {
+        return typeArray;
+    }
     let typeString = typeArray[0];
     for(let i = 1; i < typeArray.length; i++) {
         typeString += ', ' + typeArray[i];
@@ -13,13 +16,22 @@ export function makeCardHtml(card) {
     const flavorText = card.flavor ? card.flavor : 'No Flavor Text.';
     const concactSubtypes = listMultipleTypes(card.subtypes);
     const subtypes = card.subtypes ? concactSubtypes : 'None';
-    const types = listMultipleTypes(card.types);
+    const concactTypes = listMultipleTypes(card.types);
+    const types = card.subtypes ? concactTypes : 'N/A';
     const concactColors = listMultipleTypes(card.colors);
     const imageLocation = card.imageUrl || '../../assets/card-back.jpeg';
     const colors = card.colors ? concactColors : 'Colorless';
     const powerString = card.power + '/' + card.toughness;
-    const powerTough = (card.power && card.toughness) ? powerString : 'N/A';
-    
+    let powerTough;
+    if(
+        (card.power === 'undefined' && card.toughness === 'undefined') ||
+        (!card.power && !card.toughness)) {
+        powerTough = 'N/A';
+    }
+    else {
+        powerTough = powerString;
+    }
+
     const html = /*html*/`
     <li class="card-item">
         <img class="card-pic" src="${imageLocation}">
@@ -33,7 +45,7 @@ export function makeCardHtml(card) {
                         <th>Types:</th>
                         <td>${types}</td>
                         <th>Set:</th>
-                        <td title="${card.setName}">${card.set}</td>
+                        <td title="${card.setName}">${card.setName}</td>
                         <th>Cost:</th>
                         <td>${card.manaCost}</td>
                         <th>Rarity:</th>
@@ -68,62 +80,7 @@ export function loadGallery(cardArray) {
         const dom = makeCardHtml(card);
         const favoriteStar = dom.querySelector('.favorite-star');
         const cardNode = dom.querySelector('.card-item');
-        const userId = auth.currentUser.uid;
-        const userFavoritesRef = favoritesByUserRef.child(userId);
-        const userFavoriteCardRef = userFavoritesRef.child(card.id);
-        userFavoriteCardRef.once('value')
-            .then(snapshot => {
-                const value = snapshot.val();
-                let isFavorite = false;
-                if(value) {
-                    addFavorite();
-                }
-                else {
-                    removeFavorite();
-                }
-                
-                function addFavorite() {
-                    isFavorite = true;
-                    favoriteStar.textContent = '★';
-                    favoriteStar.classList.add('favorite');
-                    cardNode.classList.add('favorite-card');
-                }
-
-                function removeFavorite() {
-                    isFavorite = false;
-                    favoriteStar.textContent = '☆';
-                    favoriteStar.classList.remove('favorite');
-                    cardNode.classList.remove('favorite-card');
-                }
-                favoriteStar.addEventListener('click', () => {
-                    if(!isFavorite){
-
-                        userFavoriteCardRef.set({
-                            id: card.id,
-                            name: card.name || 'undefined',
-                            cmc: card.cmc || 'undefined',
-                            colors: card.colors ? card.colors : 'Colorless',
-                            types: card.types ? card.types : 'N/A',
-                            setName: card.setName || 'undefined',
-                            subtypes: card.subtype ? card.subtype : 'N/A',
-                            rarity: card.rarity || 'undefined',
-                            text: card.text || 'undefined',
-                            flavor: card.flavor || 'undefined',
-                            manaCost: card.manaCost || 'undefined',
-                            imageUrl: card.imageUrl || 'undefined',
-                            power: card.power || 'undefined',
-                            toughness: card.toughness || 'undefined'
-                        });
-                        addFavorite();
-                    }
-                    else {
-                        removeFavorite();
-                        userFavoriteCardRef.remove();
-                    }
-                });
-            });
-        
-        
+        addRemoveFavorite(favoriteStar, cardNode, card);
         cardListNode.appendChild(dom);
     });
 }
