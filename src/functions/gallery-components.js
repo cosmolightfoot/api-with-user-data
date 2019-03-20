@@ -24,6 +24,7 @@ export function makeCardHtml(card) {
     const subtypes = card.subtypes ? concactSubtypes : 'None';
     const concactTypes = listMultipleTypes(card.types);
     const manaCost = insertManaSymbols(card.manaCost);
+    const text = insertManaSymbols(card.text);
     const types = card.subtypes ? concactTypes : 'N/A';
     const concactColors = listMultipleTypes(card.colors);
     const imageLocation = card.imageUrl || '../../assets/card-back.jpeg';
@@ -44,7 +45,7 @@ export function makeCardHtml(card) {
         <img class="card-pic" src="${imageLocation}">
         <div>
             <h1 class="card-title">${card.name}</h1>
-            <p class="card-text">${card.text}</p>
+            <p class="card-text">${text}</p>
             <p class="card-flavor">${flavorText}</p>
             <table>
                 <tbody>
@@ -54,7 +55,7 @@ export function makeCardHtml(card) {
                         <th>Set:</th>
                         <td title="${card.setName}">${card.setName}</td>
                         <th>Cost:</th>
-                        <td>${manaCost}</td>
+                        <td class="card-cost">${manaCost}</td>
                         <th>Rarity:</th>
                         <td>${card.rarity}</td>
                     </tr>
