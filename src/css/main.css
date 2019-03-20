@@ -69,6 +69,11 @@ th, td {
     font-size: 12px;
 }
 
+td img {
+    width: 20px;
+    wight: 20px;
+}
+
 .card-item div {
     width: 500px;
     display: flex;

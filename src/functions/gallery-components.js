@@ -1,4 +1,5 @@
 import { addRemoveFavorite } from './add-remove-favorite.js';
+import insertManaSymbols from './insert-mana-symbols.js';
 function listMultipleTypes(typeArray) {    
     
     if(typeArray === 'N/A') {
@@ -22,6 +23,7 @@ export function makeCardHtml(card) {
     const concactSubtypes = listMultipleTypes(card.subtypes);
     const subtypes = card.subtypes ? concactSubtypes : 'None';
     const concactTypes = listMultipleTypes(card.types);
+    const manaCost = insertManaSymbols(card.manaCost);
     const types = card.subtypes ? concactTypes : 'N/A';
     const concactColors = listMultipleTypes(card.colors);
     const imageLocation = card.imageUrl || '../../assets/card-back.jpeg';
@@ -52,7 +54,7 @@ export function makeCardHtml(card) {
                         <th>Set:</th>
                         <td title="${card.setName}">${card.setName}</td>
                         <th>Cost:</th>
-                        <td>${card.manaCost}</td>
+                        <td>${manaCost}</td>
                         <th>Rarity:</th>
                         <td>${card.rarity}</td>
                     </tr>
