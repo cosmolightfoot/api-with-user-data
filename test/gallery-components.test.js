@@ -46,7 +46,7 @@ test('Makes list item html dynamically', assert => {
                             <th>Set:</th>
                             <td title="Future Sight">Future Sight</td>
                             <th>Cost:</th>
-                            <td>{3}{U}</td>
+                            <td class="card-cost"><img src="../../assets/three-mana.svg"><img src="../../assets/blue-mana.svg"></td>
                             <th>Rarity:</th>
                             <td>Common</td>
                         </tr>
@@ -55,7 +55,7 @@ test('Makes list item html dynamically', assert => {
                             <td>Sliver</td>
                             <th>Color:</th>
                             <td>Blue, Red</td>
-                            <th>Converted Cost:</th>
+                            <th>CMC:</th>
                             <td>4</td>
                             <th>Power/Toughness:</th>
                             <td>N/A</td>

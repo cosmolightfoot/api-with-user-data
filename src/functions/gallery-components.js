@@ -64,7 +64,7 @@ export function makeCardHtml(card) {
                         <td>${subtypes}</td>
                         <th>Color:</th>
                         <td>${colors}</td>
-                        <th>Converted Cost:</th>
+                        <th>CMC:</th>
                         <td>${card.cmc}</td>
                         <th>Power/Toughness:</th>
                         <td>${powerTough}</td>

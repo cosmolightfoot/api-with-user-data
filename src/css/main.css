@@ -37,9 +37,14 @@ form {
     justify-content: center;
     align-items: center;
     border: 3px solid red;
+    background-color: oldlace;
     width: 650px;
     margin: 2px;
     
+}
+
+.card-cost {
+    width: 70px;
 }
 
 .card-title {

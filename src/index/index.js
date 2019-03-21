@@ -18,6 +18,7 @@ function loadQuery() {
     const searchOptions = readFromQuery(existingQuery);
     const apiURL = makeSearchURL(searchOptions);
     fetch(apiURL).then(response => response.json()).then(body => {
+        console.log(body);
         loadGallery(body.cards);
     });
 }

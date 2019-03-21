@@ -110,4 +110,6 @@ feature ideas:
     click on card image and have it expand to left side
     click on 'rulings' button and have it list rulings on right side
     add filter for powers
-
+    add pagination
+    add 'deck builder'
+    
