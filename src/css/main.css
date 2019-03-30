@@ -7,9 +7,12 @@ body {
     background-attachment: fixed;
 }
 
+
 #card-gallery {
     display: flex;
     flex-direction: row-reverse;
+    position: relative;
+    flex-grow: 1;
     /* border: 3px solid orange; */
     width: 100%;
     align-items: flex-start;
@@ -17,9 +20,24 @@ body {
 }
 
 form {
-    width: 35%;
+    width: 18%;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    flex-shrink: 0;
     height: 700px;
-    border: 3px solid blue;
+    padding: 10px;
+    border-radius: 2px;
+    /* font-family: 'Cormorant SC', serif; */
+    font-family: 'IM Fell Double Pica', serif;
+    box-shadow: -9px 5px 4px rgba(20, 20, 20, 0.692);
+    /* border: 3px solid blue; */
+    background-image: linear-gradient(to bottom right, rgba(218, 238, 244, 0.89),rgba(24, 24, 24, 0));
+}
+
+form fieldset {
+    border: 1px solid black;
+    box-shadow: 0px 5px 4px rgba(20, 20, 20, 0.692);
 }
 
 #display-cards {
@@ -46,14 +64,18 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(233, 224, 218, 0.954);
-    width: 650px;
+    background-color: rgba(245, 238, 234, 0.954);
+    width: 100%;
     height: 185px;
     margin: 2px; 
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
-    box-shadow: 12px 5px 4px rgba(20, 20, 20, 0.692);
+    box-shadow: -9px 5px 4px rgba(20, 20, 20, 0.692);
+}
+
+.card-item:nth-of-type(even) {
+    background-color: rgba(245, 238, 234, 0.891);
 }
 
 .card-cost {
@@ -105,7 +127,8 @@ select {
     margin-right: 10px;
     position: relative;
     z-index: 1;
-    transition: all 500ms ease-in-out;
+    transition: all 270ms ease-in-out;
+    -webkit-transition: all 270ms ease-in-out;
     cursor: pointer;
     border: 1px solid black;
     border-radius: 6px;

@@ -1,19 +1,27 @@
 
 header {
-    width: 99vw;
+    width: 101vw;
+    position: relative;
+    top: -15px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
-    border: 3px solid black;
-    padding: 20px;
+    background-image: linear-gradient(to right, rgba(243, 244, 192, 0.55),rgba(157, 177, 255, 0.34), rgba(233, 94, 69, 0.34), rgb(51, 84, 51, 0.34), rgb(72, 72, 72, 0.55));
+    border-bottom: 3px solid rgba(17, 17, 17, 0.824);
+    padding: 0px 0px 5px 0px;
 }
 
 header h1 {
     flex-grow: 1;
+    font-family: 'Metal Mania', cursive;
+    font-size: 50px;
+    margin-bottom: 3px;
 }
 
 .mtg-logo {
-    width: 300px;
+    width: 89px;
+    margin-right: 15px;
+    margin-left: 18px;
 }
 
 .user-profile {
@@ -24,6 +32,7 @@ header h1 {
     align-items: center;
     align-self: flex-end;
     margin: 4px;
+    margin-right: 22px;
     justify-content: space-evenly;
 }
 
