@@ -47,7 +47,7 @@ export default function insertManaSymbols(cardproperty) {
 
         if(cardproperty.includes('{C}')) {
             while(manaString2.includes('{C}')) {
-                manaString = manaString.replace('{C}', '<img src="../../assets/snow-mana.svg">');
+                manaString = manaString.replace('{C}', '<img src="../../assets/diamond-mana.svg">');
                 manaString2 = manaString;
             }    
         }
