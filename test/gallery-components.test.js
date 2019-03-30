@@ -2,7 +2,7 @@ const test = QUnit.test;
 
 QUnit.module('Tests Pertaining to Building the Gallery');
 
-import { makeCardHtml } from '../src/functions/gallery-components.js';
+import { makeCardHtml, pagingButtonsTemplate } from '../src/functions/gallery-components.js';
 
 test('Makes list item html dynamically', assert => {
     const card = {
@@ -34,7 +34,7 @@ test('Makes list item html dynamically', assert => {
     const expected = /*html*/`
         <li class="card-item">
             <img class="card-pic" src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=136202&amp;type=card">
-            <div>
+            <div class="info-wrapper">
                 <h1 class="card-title">Mesmeric Sliver</h1>
                 <p class="card-text">All Slivers have "When this permanent enters the battlefield, you may fateseal 1." (To fateseal 1, its controller looks at the top card of an opponent's library, then they may put that card on the bottom of that library.)</p>
                 <p class="card-flavor">No Flavor Text.</p>
@@ -68,5 +68,19 @@ test('Makes list item html dynamically', assert => {
         `;
 
     
+    assert.htmlEqual(result, expected);
+});
+
+
+
+test('generates paging buttons html', assert => {
+    const result = pagingButtonsTemplate();
+    const expected = /*html*/ `
+        <li id="paging-section">
+            <button id="previous-button">Previous</button>
+            <button id="next-button">Next</button>
+        </li>
+    `;
+
     assert.htmlEqual(result, expected);
 });

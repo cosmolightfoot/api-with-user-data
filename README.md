@@ -109,9 +109,11 @@ make .on changes
 feature ideas: 
     <!-- click on card image and have it expand to left side -->
     click on 'rulings' button and have it list rulings on right side
-    add filter for powers
     add pagination
+    fix lands not appearing
+    refactor insert mana symbols
     add 'deck builder'
+    remove repeat entries with no images
     adjust for transform cards -- bloodline keeper/lord of lineage
     
 fonts:

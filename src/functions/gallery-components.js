@@ -110,6 +110,10 @@ export function loadGallery(cardArray) {
         });
         cardListNode.appendChild(dom);
     });
+    if(cardArray.length === 100) {
+        const pagingDom = pagingButtonsTemplate();
+        cardListNode.appendChild(pagingDom);
+    }
 }
 
 function clearList() {
@@ -118,3 +122,14 @@ function clearList() {
     }
 }
 
+export function pagingButtonsTemplate() {
+    const html = /*html*/ `
+    <li id="paging-section">
+        <a id="previous-button">Previous</a>
+        <a id="next-button">Next</a>
+    </li>
+    `;
+    const template = document.createElement('template');
+    template.innerHTML = html;
+    return template.content;
+}

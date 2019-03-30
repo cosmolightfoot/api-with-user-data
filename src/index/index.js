@@ -17,7 +17,9 @@ function loadQuery() {
     const existingQuery = window.location.hash.slice(1);
     const searchOptions = readFromQuery(existingQuery);
     const apiURL = makeSearchURL(searchOptions);
-    fetch(apiURL).then(response => response.json()).then(body => {
-        loadGallery(body.cards);
-    });
+    fetch(apiURL).then(response => Promise.all([response.json(), response.headers.get('total-count')]))
+        .then(responses => {
+            loadGallery(responses[0].cards);
+            console.log(responses[1]);
+        });
 }

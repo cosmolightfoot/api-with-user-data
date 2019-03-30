@@ -9,7 +9,7 @@ test('dynamically makes header html', function(assert) {
     const result = makeHeaderHtml();
     const expected = /*html*/ `
     <header>
-        <img class="mtg-logo" src="./assets/mtg-logo.png" alt="five symbols that represent law, water, death, fire, and earth">
+        <img class="mtg-logo" src="./assets/mtg-icon-2.png" alt="five symbols that represent law, water, death, fire, and earth">
         <h1>CardCoven</h1>
         <ul>
             <li><a href="./">Home</a></li>

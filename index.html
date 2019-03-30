@@ -13,9 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Aladin|Alegreya+SC|Alegreya+Sans+SC|Astloch|Cormorant+SC|Fondamento|IM+Fell+Double+Pica|Metal+Mania|UnifrakturMaguntia" rel="stylesheet">
 </head>
 <body>
-    <div id="header-wrapper">
-    </div>
-    <main>
+    <div id="header-wrapper"></div>
         <section id="card-gallery">
             <form id="filter-cards">
                 <h1>Search for Cards</h1>
@@ -38,6 +36,13 @@
                 <select id="filter-set" name="card-set">
                     <option value="">--Filter By Set--</option>
                 </select>
+                <div id="paging-section">
+                    <p>Now showing <span id="current-results">100</span> of <span id="total-results">41000</span> results</p>
+                    <div id="paging-buttons">
+                        <a id="previous-button">Previous</a>
+                        <a id="next-button">Next</a>
+                    </div>
+                </div>
             </form>
             <section id="display-cards"> 
             <ul id="card-list">
