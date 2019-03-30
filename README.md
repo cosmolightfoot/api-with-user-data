@@ -114,3 +114,14 @@ feature ideas:
     add 'deck builder'
     adjust for transform cards -- bloodline keeper/lord of lineage
     
+fonts:
+
+font-family: 'Aladin', cursive;
+font-family: 'Alegreya SC', serif;
+font-family: 'Alegreya Sans SC', sans-serif;
+font-family: 'Astloch', cursive;
+font-family: 'Cormorant SC', serif;
+font-family: 'Fondamento', cursive;
+font-family: 'IM Fell Double Pica', serif;
+font-family: 'UnifrakturMaguntia', cursive;
+font-family: 'Metal Mania', cursive;
