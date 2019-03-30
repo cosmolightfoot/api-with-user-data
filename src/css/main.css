@@ -1,7 +1,16 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('../../assets/symbols-background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 #card-gallery {
     display: flex;
     flex-direction: row-reverse;
-    border: 3px solid orange;
+    /* border: 3px solid orange; */
     width: 100%;
     align-items: flex-start;
     
@@ -23,7 +32,7 @@ form {
     width: 700px;
     margin: 0;
     height: 100%;
-    border: 3px solid red;
+    /* border: 3px solid red; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,8 +46,7 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 3px solid red; */
-    background-color: oldlace;
+    background-color: rgba(189, 185, 176, 0.954);
     width: 650px;
     height: 185px;
     margin: 2px; 
@@ -84,6 +92,10 @@ form {
     flex-basis: 110px;
 }
 
+select {
+    width: 150px;
+}
+
 .card-pic {
     width: 100px;
     margin-right: 10px;
@@ -99,7 +111,7 @@ th, td {
 
 .card-cost img, .card-text img{
     width: 12px;
-    wight: 12px;
+    height: 12px;
 }
 
 .card-item div {
