@@ -42,10 +42,8 @@ export function makeCardHtml(card) {
 
     const html = /*html*/`
     <li class="card-item">
-        <div class="pic-wrapper">
-            <img class="card-pic" src="${imageLocation}">
-        </div>
-        <div>
+        <img class="card-pic" src="${imageLocation}">
+        <div class="info-wrapper">
             <h1 class="card-title">${card.name}</h1>
             <p class="card-text">${text}</p>
             <p class="card-flavor">${flavorText}</p>
