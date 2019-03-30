@@ -42,7 +42,9 @@ export function makeCardHtml(card) {
 
     const html = /*html*/`
     <li class="card-item">
-        <img class="card-pic" src="${imageLocation}">
+        <div class="pic-wrapper">
+            <img class="card-pic" src="${imageLocation}">
+        </div>
         <div>
             <h1 class="card-title">${card.name}</h1>
             <p class="card-text">${text}</p>
@@ -87,8 +89,27 @@ export function loadGallery(cardArray) {
     cardArray.forEach(card => {
         const dom = makeCardHtml(card);
         const favoriteStar = dom.querySelector('.favorite-star');
+        const cardPic = dom.querySelector('.card-pic');
         const cardNode = dom.querySelector('.card-item');
         addRemoveFavorite(favoriteStar, cardNode, card);
+        // const isEnlarged = false;
+        cardPic.addEventListener('click', ()=> {
+            let enlargedPic = document.querySelector('.enlarged');
+            const clickedCardClasses = cardPic.getAttribute('class');
+            // isEnlarged = true;
+            if(!enlargedPic) {
+                cardPic.classList.add('enlarged');
+                enlargedPic = document.querySelector('.enlarged');
+            }
+            else if(clickedCardClasses.includes('enlarged')) {
+                enlargedPic.classList.remove('enlarged');
+            }
+            else {
+                enlargedPic.classList.remove('enlarged');
+                cardPic.classList.add('enlarged');
+                enlargedPic = document.querySelector('.enlarged');
+            }
+        });
         cardListNode.appendChild(dom);
     });
 }

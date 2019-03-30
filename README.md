@@ -112,4 +112,5 @@ feature ideas:
     add filter for powers
     add pagination
     add 'deck builder'
+    adjust for transform cards -- bloodline keeper/lord of lineage
     
