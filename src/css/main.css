@@ -23,21 +23,26 @@ main {
     align-items: flex-start;
     
 }
-
-form {
+#nav-bar {
     width: 18%;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    flex-shrink: 0;
     height: 700px;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    flex-shrink: 0;
+    background-image: linear-gradient(to bottom right, rgba(218, 238, 244, 0.89),rgba(24, 24, 24, 0));
+    box-shadow: -9px 5px 4px rgba(20, 20, 20, 0.692);
+    font-family: 'IM Fell Double Pica', serif;
     padding: 10px;
     border-radius: 2px;
-    /* font-family: 'Cormorant SC', serif; */
-    font-family: 'IM Fell Double Pica', serif;
-    box-shadow: -9px 5px 4px rgba(20, 20, 20, 0.692);
-    /* border: 3px solid blue; */
-    background-image: linear-gradient(to bottom right, rgba(218, 238, 244, 0.89),rgba(24, 24, 24, 0));
+
+}
+
+form {
+    height: 30%;
+    flex-shrink: 1; 
 }
 
 form fieldset {
@@ -65,6 +70,7 @@ form select {
 #paging-buttons a {
     margin: 5px;
     cursor: pointer;
+    flex-grow: 1;
 }
 
 #paging-buttons a:hover {

@@ -41,9 +41,9 @@ export function writeSearchToQuery(existingQuery, searchOptions) {
     return URL.toString();
 }
 
-export function writePageToQuery(existingQuery, searchOptions) {
+export function writePageToQuery(existingQuery, newPageNumber) {
     const URL = new URLSearchParams(existingQuery);
-    URL.set('page', searchOptions.page);
+    URL.set('page', newPageNumber);
 
     return URL.toString();
 }
@@ -56,7 +56,7 @@ export function readFromQuery(existingQuery) {
         types: URL.get('types'),
         subtypes: URL.get('subtypes'),
         setName: URL.get('setName'),
-        page: 1
+        page: URL.get('page')
     };
     return searchOptions;
 }

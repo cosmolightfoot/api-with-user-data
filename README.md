@@ -114,6 +114,7 @@ feature ideas:
     refactor insert mana symbols
     add 'deck builder'
     remove repeat entries with no images
+    add item detail page
     adjust for transform cards -- bloodline keeper/lord of lineage
     
 fonts:

@@ -125,8 +125,8 @@ function clearList() {
 export function pagingButtonsTemplate() {
     const html = /*html*/ `
     <li id="paging-section">
-        <a id="previous-button">Previous</a>
-        <a id="next-button">Next</a>
+        <button id="previous-button">Previous</button>
+        <button id="next-button">Next</button>
     </li>
     `;
     const template = document.createElement('template');

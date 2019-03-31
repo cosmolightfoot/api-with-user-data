@@ -15,35 +15,38 @@
 <body>
     <div id="header-wrapper"></div>
         <section id="card-gallery">
-            <form id="filter-cards">
-                <h1>Search for Cards</h1>
-                <input name="card-name" placeholder="Search By Name">
-                <button>Submit!</button>
-                <fieldset id="color-boxes">
-                    <legend>Color</legend>
-                    <label>White<input type="checkbox" name="white" value="white"></label>
-                    <label>Blue<input type="checkbox" name="blue" value="blue"></label>
-                    <label>Green<input type="checkbox" name="green" value="green"></label>
-                    <label>Red<input type="checkbox" name="red" value="red"></label>
-                    <label>Black<input type="checkbox" name="black" value="black"></label>
-                </fieldset>
-                <select id="filter-type" name="card-type">
-                    <option value="">--Filter By Type--</option>
-                </select>
-                <select id="filter-subtype" name="card-subtype">
-                    <option value="">--Filter By Subtype--</option>
-                </select>
-                <select id="filter-set" name="card-set">
-                    <option value="">--Filter By Set--</option>
-                </select>
-                <div id="paging-section">
-                    <p>Now showing <span id="current-results">100</span> of <span id="total-results">41000</span> results</p>
-                    <div id="paging-buttons">
-                        <a id="previous-button">Previous</a>
-                        <a id="next-button">Next</a>
+            <section id='nav-bar'>
+                <form id="filter-cards">
+                    <h1>Search for Cards</h1>
+                    <input name="card-name" placeholder="Search By Name">
+                    <button>Submit!</button>
+                    <fieldset id="color-boxes">
+                        <legend>Color</legend>
+                        <label>White<input type="checkbox" name="white" value="white"></label>
+                        <label>Blue<input type="checkbox" name="blue" value="blue"></label>
+                        <label>Green<input type="checkbox" name="green" value="green"></label>
+                        <label>Red<input type="checkbox" name="red" value="red"></label>
+                        <label>Black<input type="checkbox" name="black" value="black"></label>
+                    </fieldset>
+                    <select id="filter-type" name="card-type">
+                        <option value="">--Filter By Type--</option>
+                    </select>
+                    <select id="filter-subtype" name="card-subtype">
+                        <option value="">--Filter By Subtype--</option>
+                    </select>
+                    <select id="filter-set" name="card-set">
+                        <option value="">--Filter By Set--</option>
+                    </select>
+                </form>
+                    <div id="paging-section">
+                    <p>Your search returned <span id="total-results">41000</span> results.<br>
+                            Now showing page <span id="current-page">1</span> of <span id="total-pages">410</span></p>
                     </div>
-                </div>
-            </form>
+                    <div id="paging-buttons">
+                        <button id="previous-button">Previous</button>
+                        <button id="next-button">Next</button>
+                    </div>
+                </section>
             <section id="display-cards"> 
             <ul id="card-list">
             </ul>
