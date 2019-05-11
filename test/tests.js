@@ -7,7 +7,8 @@ import './query-functions.test.js';
 import './make-url-search.test.js';
 import './object-to-array.test.js';
 import './replace-colors.test.js';
+import './insert-symbols.test.js';
 
 QUnit.done(() => {
-    app.delete;
+  app.delete;
 });
