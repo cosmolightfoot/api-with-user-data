@@ -24,7 +24,6 @@ export function makeCardHtml(card) {
   const subtypes = card.subtypes ? concactSubtypes : 'None';
   const concactTypes = listMultipleTypes(card.types);
   const manaCost = insertManaSymbols(card.manaCost);
-  console.log(manaCost);
   const text = insertManaSymbols(card.text);
   const types = card.subtypes ? concactTypes : 'N/A';
   const concactColors = listMultipleTypes(card.colors);
@@ -84,7 +83,6 @@ export function makeCardHtml(card) {
 const cardListNode = document.getElementById('card-list');
 
 export function loadGallery(cardArray) {
-  console.log(cardArray);
   clearList();
   cardArray.forEach(card => {
     const dom = makeCardHtml(card);

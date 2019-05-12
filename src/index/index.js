@@ -14,9 +14,7 @@ window.addEventListener('hashchange', loadQuery);
 
 function loadQuery() {
   const existingQuery = window.location.hash.slice(1);
-  console.log('existing query index', existingQuery);
   const searchOptions = readFromQuery(existingQuery);
-  console.log(searchOptions);
   const apiURL = makeSearchURL(searchOptions);
   fetch(apiURL).then(response => Promise.all([response.json(), response.headers.get('total-count')]))
     .then(responses => {

@@ -10,31 +10,30 @@ const nextButtonNode = document.getElementById('next-button');
 
 
 export function updatePaging(totalResults, searchOptions) {
-    let currentPage = searchOptions.page || 1;
-    totalResultsNode.textContent = totalResults;
-    currentPageNode.textContent = currentPage;
-    const totalPages = 1 + Math.floor(totalResults / 100);
-    totalPagesNode.textContent = totalPages;
-    previousButtonNode.disabled = currentPage === 1;
-    nextButtonNode.disabled = currentPage === totalPages;
+  let currentPage = searchOptions.page || 1;
+  totalResultsNode.textContent = totalResults;
+  currentPageNode.textContent = currentPage;
+  const totalPages = 1 + Math.floor(totalResults / 100);
+  totalPagesNode.textContent = totalPages;
+  previousButtonNode.disabled = currentPage === 1;
+  nextButtonNode.disabled = currentPage === totalPages;
 
-    previousButtonNode.addEventListener('click', () => {
-        currentPage--;
-        updateQuery();
-    });
+  previousButtonNode.addEventListener('click', () => {
+    currentPage--;
+    updateQuery();
+  });
 
-    nextButtonNode.addEventListener('click', () => {
-        currentPage++;
-        updateQuery();
-    });
+  nextButtonNode.addEventListener('click', () => {
+    currentPage++;
+    updateQuery();
+  });
     
     
-    function updateQuery() {
-        const existingQuery = window.location.hash.slice(1);
-        const newQuery = writePageToQuery(existingQuery, currentPage);
-        console.log('new query', newQuery);
-        window.location.hash = newQuery;
-    }
+  function updateQuery() {
+    const existingQuery = window.location.hash.slice(1);
+    const newQuery = writePageToQuery(existingQuery, currentPage);
+    window.location.hash = newQuery;
+  }
 }
 
 

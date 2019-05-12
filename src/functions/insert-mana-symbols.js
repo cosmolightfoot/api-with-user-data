@@ -1,6 +1,6 @@
 export function getSymbols(string) {
-  const regexp = /\{(.*?)\}/g;
-  return string.match(regexp);
+  const regExp = /\{(.*?)\}/g;
+  if(string) return string.match(regExp);
 }
 
 export function makeImageTag(manaCode) {
@@ -22,3 +22,4 @@ export default function insertManaSymbols(cardProperty) {
   });
   return outerValue;
 }
+
