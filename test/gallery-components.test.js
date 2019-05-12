@@ -5,33 +5,33 @@ QUnit.module('Tests Pertaining to Building the Gallery');
 import { makeCardHtml, pagingButtonsTemplate } from '../src/functions/gallery-components.js';
 
 test('Makes list item html dynamically', assert => {
-    const card = {
-        'name': 'Mesmeric Sliver',
-        'manaCost': '{3}{U}',
-        'cmc': 4,
-        'colors': [
-            'Blue', 
-            'Red'
-        ],
-        'colorIdentity': [
-            'U'
-        ],
-        'type': 'Creature — Sliver',
-        'supertypes': [],
-        'types': [
-            'Creature'
-        ],
-        'subtypes': ['Sliver'],
-        'rarity': 'Common',
-        'set': 'FUT',
-        'setName': 'Future Sight',
-        'text': 'All Slivers have "When this permanent enters the battlefield, you may fateseal 1." (To fateseal 1, its controller looks at the top card of an opponent\'s library, then they may put that card on the bottom of that library.)',
-        'number': '53',
-        'toughness': '0',
-        'imageUrl': 'http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=136202&type=card'
-    };
-    const result = makeCardHtml(card);
-    const expected = /*html*/`
+  const card = {
+    'name': 'Mesmeric Sliver',
+    'manaCost': '{3}{U}',
+    'cmc': 4,
+    'colors': [
+      'Blue', 
+      'Red'
+    ],
+    'colorIdentity': [
+      'U'
+    ],
+    'type': 'Creature — Sliver',
+    'supertypes': [],
+    'types': [
+      'Creature'
+    ],
+    'subtypes': ['Sliver'],
+    'rarity': 'Common',
+    'set': 'FUT',
+    'setName': 'Future Sight',
+    'text': 'All Slivers have "When this permanent enters the battlefield, you may fateseal 1." (To fateseal 1, its controller looks at the top card of an opponent\'s library, then they may put that card on the bottom of that library.)',
+    'number': '53',
+    'toughness': '0',
+    'imageUrl': 'http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=136202&type=card'
+  };
+  const result = makeCardHtml(card);
+  const expected = /*html*/`
         <li class="card-item">
             <img class="card-pic" src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=136202&amp;type=card">
             <div class="info-wrapper">
@@ -68,19 +68,19 @@ test('Makes list item html dynamically', assert => {
         `;
 
     
-    assert.htmlEqual(result, expected);
+  assert.htmlEqual(result, expected);
 });
 
 
 
 test('generates paging buttons html', assert => {
-    const result = pagingButtonsTemplate();
-    const expected = /*html*/ `
+  const result = pagingButtonsTemplate();
+  const expected = /*html*/ `
         <li id="paging-section">
             <button id="previous-button">Previous</button>
             <button id="next-button">Next</button>
         </li>
     `;
 
-    assert.htmlEqual(result, expected);
+  assert.htmlEqual(result, expected);
 });
